@@ -119,7 +119,7 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var credential = error.credential;
   // ...
 });
-alert("google-signin");
+//alert("google-signin");
 }
 );
 
