@@ -72,7 +72,19 @@
 	width: 100px;
 	height: 50dp;
 }
-
+.google-signin-button{
+	height: 38px;
+	background-color: powderblue;
+}
+.googleicon{
+	height: 40px;
+	width: 40px;
+}
+.google-login-button{
+	height: 53px;
+	width: 40px;
+	background: powderblue;
+}
 
 
 
