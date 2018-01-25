@@ -77,8 +77,8 @@
 	background-color: powderblue;
 }
 .googleicon{
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 }
 .google-login-button{
 	height: 53px;
@@ -86,6 +86,19 @@
 	background-color: #F7F1F1;
 }
 
+.button {
+    background-color: #F7F1F1;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.button5 {border-radius: 50%;}
 
 
 
