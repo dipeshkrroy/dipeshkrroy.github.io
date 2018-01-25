@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Web App</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-cyan.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<!-- main stylesheet-->
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<!-- Login dialog -->
+  <dialog id="login-dialog" class="mdl-dialog">
+    <h5 class="mdl-dialog__title">Sign In</h5>
+    <div class="mdl-dialog__content">
+	 <p id="login-eror"></p>
+       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="inputemail">
+          <label class="mdl-textfield__label" for="sample3">Email</label>
+       </div>
+	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input type="password" class="mdl-textfield__input" type="text" id="inputpassword">
+          <label class="mdl-textfield__label" for="sample3">Password</label>
+       </div>
+    </div>
+    <div class="mdl-dialog__actions">
+       <!-- Colored raised button -->
+      <button id="login-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button>
+	   <!-- MDL Spinner Component -->
+      <div id="login-progress" class="login-progressbar mdl-spinner mdl-js-spinner is-active"></div>
+	 
+    
+    </div>
+  </dialog>
+<!-- login part -->
+<div class="login-cover">
+<!-- MDL Spinner Component -->
+<div class="mdl-spinner mdl-js-spinner is-active"></div>
+
+</div>
+
+<!-- Main content or Home page -->
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout-icon"></div>
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout__title">My Web App
+	  <span class="span-margin"> | </span>
+	  <span class="span-margin"> Home </span>
+	  </span>
+      <div class="mdl-layout-spacer">
+	   
+	  </div>
+      <nav class="mdl-navigation">
+        <!-- Colored raised button -->
+        <button  id="signout-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign Out
+		  <i class="button-logout-icon material-icons">account_circle</i>
+		</button>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main body content -->
+       <h5 id="welcome-message">Welcome dipesh kumar</h5>
+          <!-- Colored raised button -->
+         <button  id="google-signin" class="login-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button>
+         <!-- Square card -->
+		 <div class="demo-card-position" >
+         <div class="demo-card-square mdl-card mdl-shadow--2dp">
+           <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">Complaint Box</h2>
+           </div>
+         <div class="mdl-card__supporting-text"> 
+		     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+               <input class="mdl-textfield__input" type="text" id="inputcomplaintname">
+               <label class="mdl-textfield__label" for="sample3">Name</label>
+             </div>
+			 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+               <input class="mdl-textfield__input" type="text" id="inputcomplaint">
+               <label class="mdl-textfield__label" for="sample3">Complaint</label>
+             </div>
+	    </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <!-- Raised button -->
+            <button id="add-firebase-button"class="mdl-button mdl-js-button mdl-button--raised">Post</button>
+          </div>
+        </div>
+		</div>
+		
+		<table class="complaint-table mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+		    <thead>
+			   <tr>
+			      <td>Name</td>
+			      <td>Complaint</td>
+			      <td>Status</td>
+			   
+			   </tr>
+			</thead>
+			<tbody id="table-body">
+			   <tr>
+			      <td>Dipesh Kumar</td>
+			      <td>Why this kolvari di</td>
+			      <td><button>Remove</button></td>
+			   </tr>
+			</tbody>
+		
+		</table>
+		
+    <!-- navigation layout or menu -->		
+   <div class="navigation-drawer-layout mdl-layout__drawer">
+       <div class="demo-card-image mdl-card mdl-shadow--2dp">
+           <div class="mdl-card__title mdl-card--expand"></div>
+           <div class="mdl-card__actions">
+              <span id="user-name" class="user-detail-margin demo-card-image__filename">Dipesh Kumar</span>
+              <span id="user-email" class="user-detail-margin demo-card-image__filename">dipeshkrroy@gmail.com</span>
+              <span id="user-city" class="user-detail-margin demo-card-image__filename">Bangalore-560100</span>
+           </div>
+       </div>
+   </div>
+</div>
+
+<!-- Firebase Dat Connection Script -->
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCbz9NqgD3kDn9LfR2ya0ITVrakH4INIuY",
+    authDomain: "web-app-8f385.firebaseapp.com",
+    databaseURL: "https://web-app-8f385.firebaseio.com",
+    projectId: "web-app-8f385",
+    storageBucket: "web-app-8f385.appspot.com",
+    messagingSenderId: "786246361741"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
