@@ -23,15 +23,17 @@
           <label class="mdl-textfield__label" for="sample3">Password</label>
        </div>
     </div>
-    <div class="mdl-dialog__actions">
-       <!-- Colored raised button -->
-	    <button  id="google-signin" class="login-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">GSign</button>
-      <button id="login-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button>
+    <div class="mdl-dialog__actions">     
+       <!-- Colored raised button -->	   
+      <button id="login-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button>			  
 	   <!-- MDL Spinner Component -->
-      <div id="login-progress" class="login-progressbar mdl-spinner mdl-js-spinner is-active"></div>
-	 
+      <div id="login-progress" class="login-progressbar mdl-spinner mdl-js-spinner is-active"></div> 
     
     </div>
+	    <button id="google-signin"  class="google-login-button mdl-button mdl-js-button mdl-button--fab">
+		 <img class="googleicon" src="https://cdn.worldvectorlogo.com/logos/google-icon.svg">
+		</button>
+		
   </dialog>
 <!-- login part -->
 <div class="login-cover">
@@ -64,7 +66,7 @@
   <!-- Main body content -->
        <h5 id="welcome-message">Welcome dipesh kumar</h5>
           <!-- Colored raised button -->
-        <!-- <button  id="google-signin" class="login-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button> -->
+         <!-- <button  id="google-signin" class="login-btn mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Sign in</button>-->
          <!-- Square card -->
 		 <div class="demo-card-position" >
          <div class="demo-card-square mdl-card mdl-shadow--2dp">
@@ -136,7 +138,7 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="index.js"></script>
 </body>
