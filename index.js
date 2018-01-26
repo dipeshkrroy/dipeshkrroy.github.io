@@ -113,14 +113,13 @@ function Complaint (name, complaintstr) {
 $("#google-signin").click(
 function(){
 	
-	var provider = new firebase.auth.GoogleAuthProvider();
-	provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  alert("hi"+user.email);
+	var provider = new firebase.auth.GoogleAuthProvider();	
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+        // The signed-in user info.
+          var user = result.user;
+          alert("hi "+user.email);
   // ...
 }).catch(function(error) {
   // Handle Errors here.
@@ -132,7 +131,6 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var credential = error.credential;
   // ...
 });
-alert("google-signin");
 }
 );
 
